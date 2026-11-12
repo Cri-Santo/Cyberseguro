@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyberseguro - Segurança no seu dia-a-dia</title>
+<meta name="description" content="Guia prático de prevenção a golpes digitais e conscientização em cibersegurança: tipos de fraudes, legislação (LGPD, Marco Civil), checklist e verificação de vazamentos.">
+<meta property="og:title" content="Cyberseguro - Segurança no seu dia-a-dia">
+<meta property="og:description" content="O papel da cibersegurança na proteção do usuário. Dicas, tipos de golpes, legislação e consulta pública de vazamentos de e-mail.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#2546f0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300bf7d'%3E%3Cpath d='M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<header class="top">
+  <div class="tools" role="group" aria-label="Recursos de acessibilidade">
+    <span class="tl" id="fsLbl" aria-hidden="true">Fonte 100%</span>
+    <button type="button" class="abtn" id="bMenos" aria-label="Diminuir tamanho da fonte">A−</button>
+    <button type="button" class="abtn" id="bMais" aria-label="Aumentar tamanho da fonte">A+</button>
+    <button type="button" class="abtn" id="bContr" aria-pressed="false">Alto contraste</button>
+    <button type="button" class="abtn" id="bTema">Tema escuro</button>
+  </div>
+  <nav id="nav" aria-label="Seções do site"></nav>
+</header>
+<div id="a11yMsg" class="sr" role="status"></div>
+
+<div class="hero"><div class="wrap">
+  <div class="shieldbig" id="heroico"></div>
+  <div>
+    <h1>Cyberseguro</h1>
+    <p>Segurança no seu dia-a-dia</p>
+    <a class="btn" href="#golpes">Conhecer os golpes</a>
+    <a class="btn alt" href="#verificador">Verificar meu e-mail</a>
+  </div>
+</div></div>
+
+<main id="main" tabindex="-1"></main>
+
+<section id="boletim"><div class="wrap">
+  <h2>Boletim Cibersegurança em Dia</h2>
+  <div class="bar"></div>
+  <p class="lead">Um resumo curto com o essencial para não cair em golpes. Filtre os temas da edição e assine para receber as próximas.</p>
+  <div class="nl">
+    <div>
+      <div class="tabs" id="tabs" role="group" aria-label="Filtrar temas do boletim"></div>
+      <div id="edicao" aria-live="polite"></div>
+    </div>
+    <form id="nlForm" class="nlf" name="boletim" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="boletim">
+      <p class="sr"><label>Não preencha se for humano: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <h3>Assine o boletim</h3>
+      <label for="nNome">Nome</label>
+      <input type="text" id="nNome" name="nome" autocomplete="name" placeholder="Seu nome" aria-describedby="eNome">
+      <small class="err" id="eNome"></small>
+      <label for="nMail">E-mail</label>
+      <input type="email" id="nMail" name="email" autocomplete="email" placeholder="nome@exemplo.com" aria-describedby="eMail">
+      <small class="err" id="eMail"></small>
+      <fieldset aria-describedby="eTemas">
+        <legend>Temas de interesse</legend>
+        <label class="ck2"><input type="checkbox" name="tema" value="Golpes digitais"> Golpes digitais</label>
+        <label class="ck2"><input type="checkbox" name="tema" value="Proteção de contas"> Proteção de contas</label>
+        <label class="ck2"><input type="checkbox" name="tema" value="Leis e direitos"> Leis e direitos</label>
+        <small class="err" id="eTemas"></small>
+      </fieldset>
+      <label for="nFreq">Frequência</label>
+      <select id="nFreq" name="frequencia"><option>Semanal</option><option>Quinzenal</option><option>Mensal</option></select>
+      <label class="ck2"><input type="checkbox" id="nOk" name="concordo" value="sim" aria-describedby="eOk"> Concordo em receber o boletim e com o uso do meu e-mail para esse fim, conforme a LGPD.</label>
+      <small class="err" id="eOk"></small>
+      <button class="btn" type="submit">Assinar boletim</button>
+      <div id="nlMsg" aria-live="polite"></div>
+    </form>
+  </div>
+</div></section>
+
+<section class="tool" id="verificador"><div class="wrap">
+  <h2>Seu e-mail apareceu em algum vazamento?</h2>
+  <div class="bar"></div>
+  <p>Digite um e-mail para consultar a base pública do XposedOrNot. O endereço é enviado à API apenas para a consulta e não é guardado por este site.</p>
+  <div class="row">
+    <input id="email" type="email" placeholder="nome@exemplo.com" autocomplete="email" aria-label="E-mail para verificar">
+    <button class="btn" id="bCheck">Verificar e-mail</button>
+    <button class="btn v" id="bList">Ver vazamentos conhecidos</button>
+  </div>
+  <div id="out" aria-live="polite"></div>
+  <small class="n">Fonte dos dados: api.xposedornot.com (endpoints /v1/check-email, /v1/breach-analytics e /v1/breaches).</small>
+</div></section>
+
+<footer><div class="wrap">
+  <div><a href="https://www.cybersecbrazil.com.br/blog" target="_blank" rel="noopener">Cyber Security Brazil</a>; o conteúdo completo pertence ao portal.</div>
+  <div><a href="https://xposedornot.com" target="_blank" rel="noopener">XposedOrNot</a>, criado por Devanand Premkumar.</div>
+  <div>Prevenção de Golpes Digitais: O Papel da Cibersegurança na Proteção do Usuário.</div>
+</div></footer>
+
+
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
