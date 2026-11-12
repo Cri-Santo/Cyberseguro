@@ -66,7 +66,7 @@ S.forEach(s=>{
   let b='';
   if(s.k==='list'||s.k==='final'){
     b=`<div class="split"><div class="icons">${s.ic.map((n,i)=>tile(n,i+(s.k==='final'?2:0))).join('')}</div>${ul(s.it)}</div>`;
-    if(s.k==='final')b+=`<div class="destaque"><h3>Mensagem principal</h3><p>A segurança digital começa com a informação. Conhecer os riscos, reconhecer ameaças e adotar hábitos seguros são atitudes fundamentais para prevenir golpes e proteger sua identidade no ambiente virtual.</p></div>`;
+    if(s.k==='final')b+=`<div class="destaque"><p>A segurança digital começa com a informação. Conhecer os riscos, reconhecer ameaças e adotar hábitos seguros são atitudes fundamentais para prevenir golpes e proteger sua identidade no ambiente virtual.</p></div>`;
   }else if(s.k==='cards'){
     b=`<div class="grid">${s.it.map((x,i)=>`<article class="card t${i%5}">${tile(s.ic,i)}<h3>${esc(x[0])}</h3>${x[1]?`<p>${esc(x[1])}</p>`:''}${x[2]?`<p><a class="lei" href="${esc(x[2])}" target="_blank" rel="noopener">Ler a lei completa no Planalto<span class="sr"> (abre em nova aba): ${esc(x[0])}</span></a></p>`:''}</article>`).join('')}</div>`;
   }else if(s.k==='check'){
